@@ -7,14 +7,14 @@
 
 ## Class
 
-- Class: [CLASS NAME AND NUMBER] ([CLASS LINK])
+- Class: CS 5610 Web Development (Online) Northeastern University Oakland Fall 2026 https://johnguerra.co/classes/webDevelopment_online_fall_2026/Links to an external site.
 - Project 2: Simple backend with Node + Express + MongoDB + HTML5
 
 ## Links
 
-- Live site: [DEPLOYED URL]
-- Demo video: [VIDEO URL]
-- Presentation: [docs/TimeCapsule.pptx](docs/TimeCapsule.pptx)
+- Live site: [DEPLOYED URL]https://timecapsule-1-e70b.onrender.com 
+- Demo video: [VIDEO URL] http://localhost:3000/index.html
+- Presentation: [docs/TimeCapsule.pptx](docs/TimeCapsule.pptx) https://northeastern-my.sharepoint.com/:p:/r/personal/patel_trupa_northeastern_edu/Documents/TimeCapsule.pptx?d=wca0e5440bf82494882b0157a70578672&csf=1&web=1&e=Gw9OLy
 
 ## Project objective
 
@@ -35,7 +35,7 @@ There are no accounts. Each browser gets a random anonymous ID stored in a cooki
 ### Home
 
 ![Home page](docs/home.png)
-![Home page](<docs/home(2).png>)
+![Home page](docs/home(2).png)
 
 ### Letters to Future Me
 
