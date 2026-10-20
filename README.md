@@ -35,7 +35,6 @@ There are no accounts. Each browser gets a random anonymous ID stored in a cooki
 ### Home
 
 ![Home page](docs/home.png)
-![Home page](docs/home(2).png)
 
 ### Letters to Future Me
 
