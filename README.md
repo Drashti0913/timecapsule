@@ -14,6 +14,7 @@
 
 - Live site: [DEPLOYED URL]
 - Demo video: [VIDEO URL]
+- Presentation: [docs/TimeCapsule.pptx](docs/TimeCapsule.pptx)
 
 ## Project objective
 
