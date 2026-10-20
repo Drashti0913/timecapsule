@@ -13,6 +13,9 @@ export async function connectDB() {
   await client.connect();
   db = client.db("timecapsule");
   await db.collection("capsules").createIndex({ ownerId: 1, unlockAt: 1 });
+  await db
+    .collection("memories")
+    .createIndex({ placeLower: 1, year: 1, season: 1 });
   console.log("Connected to MongoDB");
   return db;
 }

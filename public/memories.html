@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Memory Wall | TimeCapsule</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/memory-form.css" />
+    <link rel="stylesheet" href="css/memory-card.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html">TimeCapsule</a>
+      <nav aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="capsules.html">Letters to Future Me</a>
+        <a href="memories.html" aria-current="page">Memory Wall</a>
+      </nav>
+    </header>
+
+    <main class="page">
+      <h1>Memory Wall</h1>
+
+      <section class="howto">
+        <h2>How to use</h2>
+        <ul>
+          <li>
+            Share a short memory with a place, year, and season. It is
+            anonymous.
+          </li>
+          <li>Use the filters to find memories by place, year, or season.</li>
+          <li>
+            React with ❤️ 😂 😢. Click again to remove, or click another to
+            switch.
+          </li>
+          <li>You can edit or delete only the memories you posted.</li>
+        </ul>
+      </section>
+
+      <p class="notice">
+        Please don't include full names, phone numbers, addresses, or other
+        personal information about yourself or others.
+      </p>
+
+      <form id="memory-form">
+        <div class="label-row">
+          <label for="text">Your memory</label>
+          <button type="button" id="idea-btn" class="button-secondary">
+            Need ideas? ✨
+          </button>
+        </div>
+        <div id="idea-card" class="idea-card" hidden>
+          <p id="idea-text"></p>
+          <button type="button" id="idea-use">Add to my memory</button>
+          <button type="button" id="idea-next" class="button-secondary">
+            Another one
+          </button>
+        </div>
+        <textarea
+          id="text"
+          maxlength="500"
+          placeholder="Share a memory..."
+          required
+        ></textarea>
+        <p id="text-count" class="char-count">0 / 500</p>
+
+        <input
+          id="place"
+          maxlength="60"
+          placeholder="Place (e.g., Boston)"
+          required
+        />
+        <input id="year" type="number" min="1950" placeholder="Year" required />
+        <select id="season" required>
+          <option value="">Season</option>
+          <option>Spring</option>
+          <option>Summer</option>
+          <option>Fall</option>
+          <option>Winter</option>
+        </select>
+
+        <fieldset class="choice-group">
+          <legend>How are you feeling?</legend>
+          <div class="mood-options">
+            <label class="mood-option">
+              <input type="radio" name="mood" value="happy" checked />
+              <span>😊<small>Happy</small></span>
+            </label>
+            <label class="mood-option">
+              <input type="radio" name="mood" value="hopeful" />
+              <span>🌱<small>Hopeful</small></span>
+            </label>
+            <label class="mood-option">
+              <input type="radio" name="mood" value="nervous" />
+              <span>😬<small>Nervous</small></span>
+            </label>
+            <label class="mood-option">
+              <input type="radio" name="mood" value="excited" />
+              <span>🤩<small>Excited</small></span>
+            </label>
+            <label class="mood-option">
+              <input type="radio" name="mood" value="calm" />
+              <span>😌<small>Calm</small></span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="choice-group">
+          <legend>Card color</legend>
+          <div class="color-options">
+            <label class="color-option">
+              <input type="radio" name="color" value="pink" checked />
+              <span class="swatch swatch-pink"></span>
+              <span class="visually-hidden">Pink</span>
+            </label>
+            <label class="color-option">
+              <input type="radio" name="color" value="sky" />
+              <span class="swatch swatch-sky"></span>
+              <span class="visually-hidden">Sky blue</span>
+            </label>
+            <label class="color-option">
+              <input type="radio" name="color" value="butter" />
+              <span class="swatch swatch-butter"></span>
+              <span class="visually-hidden">Butter yellow</span>
+            </label>
+            <label class="color-option">
+              <input type="radio" name="color" value="mint" />
+              <span class="swatch swatch-mint"></span>
+              <span class="visually-hidden">Mint</span>
+            </label>
+            <label class="color-option">
+              <input type="radio" name="color" value="peach" />
+              <span class="swatch swatch-peach"></span>
+              <span class="visually-hidden">Peach</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <button type="submit" id="submit-btn">Post memory</button>
+        <button type="button" id="cancel-edit" hidden>Cancel edit</button>
+        <p id="form-error" role="alert"></p>
+      </form>
+
+      <section id="filters">
+        <input id="filter-place" placeholder="Filter by place" />
+        <input id="filter-year" type="number" placeholder="Year" />
+        <select id="filter-season">
+          <option value="">All seasons</option>
+          <option>Spring</option>
+          <option>Summer</option>
+          <option>Fall</option>
+          <option>Winter</option>
+        </select>
+        <select id="filter-sort">
+          <option value="">Newest first</option>
+          <option value="reactions">Most reacted</option>
+        </select>
+      </section>
+
+      <section id="wall"></section>
+
+      <section>
+        <h2>Wall summary</h2>
+        <ul id="summary"></ul>
+      </section>
+    </main>
+
+    <script type="module" src="js/memories.js"></script>
+  </body>
+</html>

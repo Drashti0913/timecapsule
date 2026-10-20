@@ -1,0 +1,194 @@
+.howto {
+  background: var(--sky);
+  border: 2px solid var(--plum);
+  border-radius: var(--radius);
+  box-shadow: var(--sticker);
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.howto h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.3rem;
+}
+
+.howto ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.notice {
+  background: var(--butter);
+  border: 2px solid var(--plum);
+  border-radius: 14px;
+  padding: 0.75rem 1rem;
+}
+
+form,
+#filters {
+  display: grid;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+#memory-form {
+  background: var(--surface);
+  border: 2px solid var(--plum);
+  border-radius: var(--radius);
+  box-shadow: var(--sticker);
+  padding: 1.5rem;
+}
+
+select {
+  font: inherit;
+  padding: 0.65rem 0.9rem;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--plum);
+}
+
+textarea {
+  min-height: 90px;
+}
+
+#form-error {
+  color: var(--error);
+  font-weight: 700;
+  margin: 0;
+}
+
+button[hidden] {
+  display: none;
+}
+
+/* Label row + idea button */
+.label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.label-row label {
+  margin: 0;
+}
+
+.label-row button,
+.idea-card button {
+  padding: 0.3rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+.idea-card {
+  background: var(--butter);
+  border: 2px solid var(--plum);
+  border-radius: 14px;
+  padding: 0.75rem 1rem;
+}
+
+.idea-card p {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+}
+
+.char-count {
+  margin: 0;
+  text-align: right;
+  font-size: 0.9rem;
+  color: var(--plum-soft);
+}
+
+/* Mood + color pickers */
+.choice-group {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.choice-group legend {
+  font-weight: 700;
+  padding: 0;
+  margin-bottom: 0.4rem;
+}
+
+.mood-options,
+.color-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.mood-option,
+.color-option {
+  position: relative;
+  margin: 0;
+}
+
+.mood-option input,
+.color-option input,
+.visually-hidden {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.mood-option span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+  padding: 0.4rem 0.6rem;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.mood-option input:checked + span {
+  border-color: var(--plum);
+  background: var(--butter);
+  box-shadow: 2px 2px 0 var(--plum);
+}
+
+.mood-option input:focus-visible + span,
+.color-option input:focus-visible + .swatch {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.swatch {
+  display: block;
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.color-option input:checked + .swatch {
+  border-color: var(--plum);
+  box-shadow: 2px 2px 0 var(--plum);
+}
+
+.swatch-pink {
+  background: var(--pink);
+}
+
+.swatch-sky {
+  background: var(--sky);
+}
+
+.swatch-butter {
+  background: var(--butter);
+}
+
+.swatch-mint {
+  background: var(--mint);
+}
+
+.swatch-peach {
+  background: var(--peach);
+}

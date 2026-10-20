@@ -1,0 +1,52 @@
+.card {
+  background: var(--surface);
+  border: 2px solid var(--plum);
+  border-radius: var(--radius);
+  box-shadow: var(--sticker);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.card p {
+  margin: 0 0 0.5rem;
+}
+
+.card small {
+  color: var(--plum-soft);
+}
+
+.card button {
+  margin: 0.5rem 0.4rem 0 0;
+  padding: 0.3rem 0.9rem;
+  box-shadow: 2px 2px 0 var(--plum);
+  background: var(--surface);
+}
+
+.card button:hover {
+  background: var(--lavender);
+}
+
+.card button.active {
+  background: var(--pink-deep);
+}
+
+/* Card colors (chosen by the person who posts) */
+.card-pink {
+  background: var(--pink);
+}
+
+.card-sky {
+  background: var(--sky);
+}
+
+.card-butter {
+  background: var(--butter);
+}
+
+.card-mint {
+  background: var(--mint);
+}
+
+.card-peach {
+  background: var(--peach);
+}
