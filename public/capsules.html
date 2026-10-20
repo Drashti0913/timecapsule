@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Letters to Future Me · TimeCapsule</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/capsules.css" />
+    <script type="module" src="js/capsules.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html">TimeCapsule</a>
+      <nav aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="capsules.html" aria-current="page">Letters to Future Me</a>
+        <a href="memories.html">Memory Wall</a>
+      </nav>
+    </header>
+
+    <main class="page capsules-page">
+      <section class="intro">
+        <div class="doodles" aria-hidden="true">
+          <span>✉</span><span>♥</span><span>✿</span><span>☆</span>
+        </div>
+        <h1>Letters to Future Me</h1>
+        <p>
+          Write to the person you'll be on a day that matters. Once sealed, the
+          message stays hidden until its unlock date. You can rename a letter or
+          push its date later, but never earlier.
+        </p>
+        <ul id="stats" class="stat-bubbles" aria-live="polite"></ul>
+      </section>
+
+      <div class="capsules-layout">
+        <section class="compose" aria-labelledby="compose-title">
+          <h2 id="compose-title">Write a letter</h2>
+          <form id="create-form" novalidate>
+            <label for="title">Title</label>
+            <input
+              id="title"
+              name="title"
+              type="text"
+              maxlength="100"
+              required
+              placeholder="Open on graduation day"
+            />
+
+            <div class="label-row">
+              <label for="message">Message</label>
+              <button type="button" id="prompt-button" class="idea-button">
+                Need ideas? ✨
+              </button>
+            </div>
+            <div id="prompt-card" class="prompt-card" hidden>
+              <p id="prompt-text"></p>
+              <div class="prompt-actions">
+                <button type="button" id="prompt-use">Add to my letter</button>
+                <button type="button" id="prompt-next" class="button-secondary">
+                  Another one
+                </button>
+              </div>
+            </div>
+            <textarea
+              id="message"
+              name="message"
+              rows="9"
+              maxlength="5000"
+              required
+              placeholder="Dear future me, right now I'm…"
+            ></textarea>
+            <p id="message-count" class="char-count">0 / 5000</p>
+
+            <label for="unlockAt">Unlock date and time</label>
+            <input
+              id="unlockAt"
+              name="unlockAt"
+              type="datetime-local"
+              required
+            />
+            <div class="presets" role="group" aria-label="Quick unlock dates">
+              <button type="button" data-days="7">In 1 week</button>
+              <button type="button" data-days="30">In 1 month</button>
+              <button type="button" data-days="182">In 6 months</button>
+              <button type="button" data-days="365">In 1 year</button>
+            </div>
+
+            <fieldset class="choice-group">
+              <legend>How are you feeling?</legend>
+              <div class="mood-options">
+                <label class="mood-option">
+                  <input type="radio" name="mood" value="happy" checked />
+                  <span>😊<small>Happy</small></span>
+                </label>
+                <label class="mood-option">
+                  <input type="radio" name="mood" value="hopeful" />
+                  <span>🌱<small>Hopeful</small></span>
+                </label>
+                <label class="mood-option">
+                  <input type="radio" name="mood" value="nervous" />
+                  <span>😬<small>Nervous</small></span>
+                </label>
+                <label class="mood-option">
+                  <input type="radio" name="mood" value="excited" />
+                  <span>🤩<small>Excited</small></span>
+                </label>
+                <label class="mood-option">
+                  <input type="radio" name="mood" value="calm" />
+                  <span>😌<small>Calm</small></span>
+                </label>
+              </div>
+            </fieldset>
+
+            <label for="occasion">Occasion</label>
+            <select id="occasion" name="occasion">
+              <option value="just-because">💌 Just because</option>
+              <option value="graduation">🎓 Graduation</option>
+              <option value="birthday">🎂 Birthday</option>
+              <option value="new-year">🎆 New Year</option>
+              <option value="new-job">💼 New job</option>
+              <option value="moving">📦 Moving</option>
+            </select>
+
+            <fieldset class="choice-group">
+              <legend>Envelope color</legend>
+              <div class="color-options">
+                <label class="color-option">
+                  <input type="radio" name="color" value="pink" checked />
+                  <span class="swatch swatch-pink"></span>
+                  <span class="visually-hidden">Pink</span>
+                </label>
+                <label class="color-option">
+                  <input type="radio" name="color" value="sky" />
+                  <span class="swatch swatch-sky"></span>
+                  <span class="visually-hidden">Sky blue</span>
+                </label>
+                <label class="color-option">
+                  <input type="radio" name="color" value="butter" />
+                  <span class="swatch swatch-butter"></span>
+                  <span class="visually-hidden">Butter yellow</span>
+                </label>
+                <label class="color-option">
+                  <input type="radio" name="color" value="peach" />
+                  <span class="swatch swatch-peach"></span>
+                  <span class="visually-hidden">Peach</span>
+                </label>
+                <label class="color-option">
+                  <input type="radio" name="color" value="lilac" />
+                  <span class="swatch swatch-lilac"></span>
+                  <span class="visually-hidden">Lilac</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <p id="create-error" class="form-error" role="alert"></p>
+            <button type="submit" class="seal-button">Seal letter ♥</button>
+          </form>
+        </section>
+
+        <section class="letters" aria-labelledby="letters-title">
+          <div class="letters-head">
+            <h2 id="letters-title">Your letters</h2>
+            <div class="filters" role="group" aria-label="Show letters">
+              <button type="button" data-filter="all" aria-pressed="true">
+                All
+              </button>
+              <button type="button" data-filter="sealed" aria-pressed="false">
+                Sealed
+              </button>
+              <button type="button" data-filter="opened" aria-pressed="false">
+                Opened
+              </button>
+            </div>
+          </div>
+
+          <div class="toolbar">
+            <label for="search" class="visually-hidden"
+              >Search letters by title</label
+            >
+            <input
+              id="search"
+              type="search"
+              placeholder="Search by title… 🔍"
+            />
+            <label for="sort" class="visually-hidden">Sort letters</label>
+            <select id="sort">
+              <option value="soonest">Opens soonest</option>
+              <option value="newest">Newest written</option>
+            </select>
+          </div>
+
+          <p id="list-status" class="list-status" aria-live="polite">
+            Loading your letters…
+          </p>
+          <ul id="capsule-list" class="capsule-list"></ul>
+        </section>
+      </div>
+    </main>
+
+    <dialog id="read-dialog" class="letter-dialog" aria-labelledby="read-title">
+      <article>
+        <h2 id="read-title"></h2>
+        <p id="read-meta" class="letter-meta"></p>
+        <div id="read-message" class="letter-body"></div>
+      </article>
+      <form method="dialog">
+        <button type="submit">Close</button>
+      </form>
+    </dialog>
+
+    <dialog id="edit-dialog" aria-labelledby="edit-heading">
+      <form id="edit-form" novalidate>
+        <h2 id="edit-heading">Edit letter</h2>
+        <label for="edit-title">Title</label>
+        <input
+          id="edit-title"
+          name="title"
+          type="text"
+          maxlength="100"
+          required
+        />
+
+        <label for="edit-unlockAt">Unlock date and time</label>
+        <input
+          id="edit-unlockAt"
+          name="unlockAt"
+          type="datetime-local"
+          required
+        />
+        <p class="hint">You can only move this date later.</p>
+
+        <p id="edit-error" class="form-error" role="alert"></p>
+        <div class="dialog-actions">
+          <button type="button" id="edit-cancel" class="button-secondary">
+            Cancel
+          </button>
+          <button type="submit">Save changes</button>
+        </div>
+      </form>
+    </dialog>
+
+    <p id="toast" class="toast" role="status" aria-live="polite"></p>
+  </body>
+</html>
