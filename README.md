@@ -13,7 +13,7 @@
 ## Links
 
 - Live site: [DEPLOYED URL]https://timecapsule-1-e70b.onrender.com 
-- Demo video: [VIDEO URL] http://localhost:3000/index.html
+- Demo video: [YOUTUBE VIDEO LINK][ADD PUBLIC VIDEO LINK HERE]
 - Presentation: [docs/TimeCapsule.pptx](docs/TimeCapsule.pptx) https://northeastern-my.sharepoint.com/:p:/r/personal/patel_trupa_northeastern_edu/Documents/TimeCapsule.pptx?d=wca0e5440bf82494882b0157a70578672&csf=1&web=1&e=Gw9OLy
 
 ## Project objective
